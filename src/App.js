@@ -1,23 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
+import CharacterList from './pages/CharactersList';
+import Character from './pages/Character';
+import Search from './pages/Search';
+import {Route} from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Route exact path ="/" component={CharacterList} /> 
+      <Route exact path ="/:id" component={Character} /> 
+      <Route exact path ="/search" component={Search} /> 
     </div>
   );
 }
